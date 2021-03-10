@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+}
+
+.sliderWrapper {
+    width: 100%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow:hidden;
+    position: relative;
+    .scenesWrapper {
+        position: relative;
+        top: 0;
+        left: 0;
+        display: flex;
+        height: 100%;
+        &.hasTransition{
+            transition: transform ease 1s;
+        }
+        .scene {
+            color: white;
+            background-size: cover;
+            background-position: center;
+            img{
+                width:100%;
+                height:100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+    .slideControl{
+        position: absolute;
+        z-index: 9999;
+        cursor:pointer;
+        &.prev,&.next{
+            top:calc( 50% - 10px);
+            width:20px;
+            height:20px;
+        }
+        &.prev{
+            left:1rem;
+            display: inline-block;
+            border-left: 4px solid white;
+            border-top: 4px solid white;
+            width: 20px; height: 20px;
+            transform: rotate(-45deg);
+        }
+        &.next{
+            right:1rem;
+            display: inline-block;
+            border-right: 4px solid white;
+            border-bottom: 4px solid white;
+            width: 20px; height: 20px;
+            transform: rotate(-45deg);
+        }
+        &.add-slides{
+            bottom:1rem;
+            z-index: 9999;
+            border: 1px solid white;
+            border-radius:10px;
+            color:white;
+            padding: .5rem;
+            font-size:.75rem;
+            left:calc( 50% - 50px );
+            width:100px;
+            box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
+                        0 2px 2px rgba(0,0,0,0.12), 
+                        0 4px 4px rgba(0,0,0,0.12), 
+                        0 8px 8px rgba(0,0,0,0.12),
+                        0 16px 16px rgba(0,0,0,0.12);
+        }
+    }
+}
+

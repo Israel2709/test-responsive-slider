@@ -15,15 +15,25 @@ npm install --save test-responsive-slider
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'test-responsive-slider'
+import ReactResponsiveSlider from 'test-responsive-slider'
 import 'test-responsive-slider/dist/index.css'
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+    return <ReactResponsiveSlider />
   }
 }
 ```
+
+## Props
+
+| Name | Type | Description | Default |
+| ----------- | ----------- | ----------- | ----------- |
+| controls | `bool` | Activate / Deactivate slider controls | `false` |
+| gallery | `Array` | An array of images paths (['some_path/some_img.jpg',...]), if no gallery is provided, the slider will show a set of placeholder images | `Array of placeholder images` |
+| timing | `string` | Value for the transition-timing property of the slider, it can be in *s* or *ms* units | `1s` |
+| timingFunction | `string` | Value for the transition-timing-function property of the slider, it can be any valid value for the css property *"transtion-timing-function"* | `linear` |
+
 
 ## License
 
