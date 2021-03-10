@@ -5,7 +5,7 @@ import styles from './index.scss'
 
 export default function ReactResponsiveSlider(props) {
 
-  const { timing, startingSlide, gallery, timingFunction, controls } = props
+  const { timing, startingSlide, gallery, timingFunction, controls, width, height } = props
   const defaultGallery = [
     'https://picsum.photos/id/13/700/500',
     'https://picsum.photos/id/14/700/500',
@@ -66,7 +66,14 @@ export default function ReactResponsiveSlider(props) {
 
   return (
     <React.Fragment>
-      <div className={styles.sliderWrapper} ref={sliderWrapper}>
+      <div 
+        className={styles.sliderWrapper} 
+        ref={sliderWrapper}
+        style={{ 
+          width: width || '100%', 
+          height: height || '300px'
+        }}
+      >
         <div
           className={`${styles.scenesWrapper} ${hasTransition && styles.hasTransition}`}
           ref={scenesWrapper}
